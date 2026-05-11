@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Virtual environment
+backend/venv/
+venv/
+env/
+
+# ML / Model artifacts (large datasets — download separately)
+backend/dataset/
+
+# Uploads (runtime, user data)
+backend/uploads/
+uploads/
+
+# Model binaries (tracked but excluded from LFS if needed)
+*.h5
+*.tflite
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Runtime PID files
+backend_pid.txt
+frontend_pid.txt
+
+# Node
+frontend/node_modules/
+
+# Claude local config
+.claude/settings.local.json
+
+# Output
+output/
+
+# Internal report scripts (project-specific, not needed for contributors)
+merge_rubric.py
+generate_report.py
+generate_report_rit.py
