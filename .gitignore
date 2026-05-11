@@ -33,7 +33,10 @@ frontend_pid.txt
 frontend/node_modules/
 
 # Claude local config
-.claude/settings.local.json
+.claude/
+
+# Env
+.env
 
 # Output
 output/
