@@ -19,10 +19,7 @@
 <a id="architecture"></a>
 <h2><img src="docs/px3/h2-architecture.svg" width="100%" alt="Architecture"/></h2>
 
-<p align="center"><img src="docs/px3/c-01.svg" width="100%" alt="code: Browser Camera ↓ JPEG frame (every N seconds or on demand) POST /predict ── Flask API (port 5001) ├── DenseNet121 (Keras) → disease label + confidence └── OpenC"/></p>
-
-<details>
-<summary><img src="docs/px3/copy-btn.svg" height="40" alt="Copy code: click to open"/></summary>
+<p align="center"><img src="docs/px3/bar-code.svg" width="100%" alt="code code"/></p>
 
 ```
 Browser Camera
@@ -36,8 +33,6 @@ Frontend (port 8080)
     ├── 2D canvas          →  fallback bounding-box overlay
     └── Three.js (WebGL)   →  3D ring + contour line anchored to leaf
 ```
-
-</details>
 
 <a id="tech-stack"></a>
 <h2><img src="docs/px3/h2-tech-stack.svg" width="100%" alt="Tech Stack"/></h2>
@@ -55,25 +50,17 @@ Frontend (port 8080)
 <a id="1-clone"></a>
 <h3><img src="docs/px3/h3-1-clone.svg" width="100%" alt="1. Clone"/></h3>
 
-<p align="center"><img src="docs/px3/c-02.svg" width="100%" alt="code: git clone https://github.com/thanmaiashok/AR-Plant-Health-Checker.git cd AR-Plant-Health-Checker "/></p>
-
-<details>
-<summary><img src="docs/px3/copy-btn.svg" height="40" alt="Copy code: click to open"/></summary>
+<p align="center"><img src="docs/px3/bar-bash.svg" width="100%" alt="bash code"/></p>
 
 ```bash
 git clone https://github.com/thanmaiashok/AR-Plant-Health-Checker.git
 cd AR-Plant-Health-Checker
 ```
 
-</details>
-
 <a id="2-backend-setup"></a>
 <h3><img src="docs/px3/h3-2-backend-setup.svg" width="100%" alt="2. Backend setup"/></h3>
 
-<p align="center"><img src="docs/px3/c-03.svg" width="100%" alt="code: cd backend python3.12 -m venv venv ./venv/bin/pip install -r requirements.txt cd .. "/></p>
-
-<details>
-<summary><img src="docs/px3/copy-btn.svg" height="40" alt="Copy code: click to open"/></summary>
+<p align="center"><img src="docs/px3/bar-bash.svg" width="100%" alt="bash code"/></p>
 
 ```bash
 cd backend
@@ -82,15 +69,10 @@ python3.12 -m venv venv
 cd ..
 ```
 
-</details>
-
 <a id="3-frontend-setup"></a>
 <h3><img src="docs/px3/h3-3-frontend-setup.svg" width="100%" alt="3. Frontend setup"/></h3>
 
-<p align="center"><img src="docs/px3/c-04.svg" width="100%" alt="code: cd frontend npm install cd .. "/></p>
-
-<details>
-<summary><img src="docs/px3/copy-btn.svg" height="40" alt="Copy code: click to open"/></summary>
+<p align="center"><img src="docs/px3/bar-bash.svg" width="100%" alt="bash code"/></p>
 
 ```bash
 cd frontend
@@ -98,57 +80,37 @@ npm install
 cd ..
 ```
 
-</details>
-
 <a id="4-run-both-services-in-one-command"></a>
 <h3><img src="docs/px3/h3-4-run-both-services-in-one-command.svg" width="100%" alt="4. Run (both services in one command)"/></h3>
 
-<p align="center"><img src="docs/px3/c-05.svg" width="100%" alt="code: ./start.sh "/></p>
-
-<details>
-<summary><img src="docs/px3/copy-btn.svg" height="40" alt="Copy code: click to open"/></summary>
+<p align="center"><img src="docs/px3/bar-bash.svg" width="100%" alt="bash code"/></p>
 
 ```bash
 ./start.sh
 ```
 
-</details>
-
 <p align="center"><img src="docs/px3/t-04.svg" width="100%" alt="Then open: http://127.0.0.1:8080/public/index.html"/></p>
 
-<p align="center"><img src="docs/px3/c-06.svg" width="100%" alt="code: # Stop everything ./kill.sh "/></p>
-
-<details>
-<summary><img src="docs/px3/copy-btn.svg" height="40" alt="Copy code: click to open"/></summary>
+<p align="center"><img src="docs/px3/bar-bash.svg" width="100%" alt="bash code"/></p>
 
 ```bash
 # Stop everything
 ./kill.sh
 ```
 
-</details>
-
 <p align="center"><img src="docs/px3/t-05.svg" width="100%" alt="Windows:"/></p>
 
-<p align="center"><img src="docs/px3/c-07.svg" width="100%" alt="code: start.bat kill.bat "/></p>
-
-<details>
-<summary><img src="docs/px3/copy-btn.svg" height="40" alt="Copy code: click to open"/></summary>
+<p align="center"><img src="docs/px3/bar-bat.svg" width="100%" alt="bat code"/></p>
 
 ```bat
 start.bat
 kill.bat
 ```
 
-</details>
-
 <a id="manual-startup"></a>
 <h3><img src="docs/px3/h3-manual-startup.svg" width="100%" alt="Manual startup"/></h3>
 
-<p align="center"><img src="docs/px3/c-08.svg" width="100%" alt="code: # Terminal 1 — backend (port 5001) cd backend PYTHONPATH=$(pwd) ./venv/bin/python api/server.py # Terminal 2 — frontend (port 8080) cd frontend python3 -m http."/></p>
-
-<details>
-<summary><img src="docs/px3/copy-btn.svg" height="40" alt="Copy code: click to open"/></summary>
+<p align="center"><img src="docs/px3/bar-bash.svg" width="100%" alt="bash code"/></p>
 
 ```bash
 # Terminal 1 — backend (port 5001)
@@ -160,8 +122,6 @@ cd frontend
 python3 -m http.server 8080 --bind 127.0.0.1
 ```
 
-</details>
-
 <a id="dataset"></a>
 <h2><img src="docs/px3/h2-dataset.svg" width="100%" alt="Dataset"/></h2>
 
@@ -169,23 +129,15 @@ python3 -m http.server 8080 --bind 127.0.0.1
 
 <p align="center"><a href="https://www.kaggle.com/datasets/abdallahalidev/plantvillage-dataset"><img src="docs/px3/link-01.svg" height="34" alt="Kaggle"/></a></p>
 
-<p align="center"><img src="docs/px3/c-09.svg" width="100%" alt="code: backend/dataset/PlantVillage/ "/></p>
-
-<details>
-<summary><img src="docs/px3/copy-btn.svg" height="40" alt="Copy code: click to open"/></summary>
+<p align="center"><img src="docs/px3/bar-code.svg" width="100%" alt="code code"/></p>
 
 ```
 backend/dataset/PlantVillage/
 ```
 
-</details>
-
 <p align="center"><img src="docs/px3/t-07.svg" width="100%" alt="Run training:"/></p>
 
-<p align="center"><img src="docs/px3/c-10.svg" width="100%" alt="code: cd backend/training ../../venv/bin/python preprocess_data.py ../../venv/bin/python train_model.py ../../venv/bin/python evaluate_model.py "/></p>
-
-<details>
-<summary><img src="docs/px3/copy-btn.svg" height="40" alt="Copy code: click to open"/></summary>
+<p align="center"><img src="docs/px3/bar-bash.svg" width="100%" alt="bash code"/></p>
 
 ```bash
 cd backend/training
@@ -193,8 +145,6 @@ cd backend/training
 ../../venv/bin/python train_model.py
 ../../venv/bin/python evaluate_model.py
 ```
-
-</details>
 
 <p align="center"><img src="docs/px3/t-08.svg" width="100%" alt="The trained model (backend/models/plant_disease_model.keras) is included in this repo (37 MB)."/></p>
 
@@ -206,10 +156,7 @@ cd backend/training
 
 <p align="center"><img src="docs/px3/t-09.svg" width="100%" alt="Request: multipart/form-data with field image (JPEG or PNG) Response:"/></p>
 
-<p align="center"><img src="docs/px3/c-11.svg" width="100%" alt="code: { &quot;disease&quot;: &quot;Tomato_Early_blight&quot;, &quot;confidence&quot;: 0.97, &quot;recommendation&quot;: &quot;Prune lower leaves and use mulch to reduce soil splash...&quot;, &quot;leafBox&quot;: { &quot;x&quot;: 0.20, &quot;"/></p>
-
-<details>
-<summary><img src="docs/px3/copy-btn.svg" height="40" alt="Copy code: click to open"/></summary>
+<p align="center"><img src="docs/px3/bar-json.svg" width="100%" alt="json code"/></p>
 
 ```json
 {
@@ -221,31 +168,21 @@ cd backend/training
 }
 ```
 
-</details>
-
 <p align="center"><img src="docs/px3/t-10.svg" width="100%" alt="leafBox and leafContour are null when no leaf is detected."/></p>
 
 <a id="get-health"></a>
 <h3><img src="docs/px3/h3-get-health.svg" width="100%" alt="GET /health"/></h3>
 
-<p align="center"><img src="docs/px3/c-12.svg" width="100%" alt="code: { &quot;status&quot;: &quot;ok&quot; } "/></p>
-
-<details>
-<summary><img src="docs/px3/copy-btn.svg" height="40" alt="Copy code: click to open"/></summary>
+<p align="center"><img src="docs/px3/bar-json.svg" width="100%" alt="json code"/></p>
 
 ```json
 { "status": "ok" }
 ```
 
-</details>
-
 <a id="project-structure"></a>
 <h2><img src="docs/px3/h2-project-structure.svg" width="100%" alt="Project Structure"/></h2>
 
-<p align="center"><img src="docs/px3/c-13.svg" width="100%" alt="code: AR-Plant-Health-Checker/ ├── backend/ │ ├── api/ # Flask server + routes │ ├── inference/ # Predict + leaf detection │ ├── models/ # Trained .keras model + clas"/></p>
-
-<details>
-<summary><img src="docs/px3/copy-btn.svg" height="40" alt="Copy code: click to open"/></summary>
+<p align="center"><img src="docs/px3/bar-code.svg" width="100%" alt="code code"/></p>
 
 ```
 AR-Plant-Health-Checker/
@@ -266,8 +203,6 @@ AR-Plant-Health-Checker/
 ├── start.sh / start.bat
 └── kill.sh  / kill.bat
 ```
-
-</details>
 
 <a id="contributing"></a>
 <h2><img src="docs/px3/h2-contributing.svg" width="100%" alt="Contributing"/></h2>
