@@ -75,7 +75,7 @@ Frontend (port 8080)
 ### 1. Clone
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/AR-Plant-Health-Checker.git
+git clone https://github.com/thanmaiashok/AR-Plant-Health-Checker.git
 cd AR-Plant-Health-Checker
 ```
 
