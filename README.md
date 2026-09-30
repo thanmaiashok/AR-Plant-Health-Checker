@@ -9,19 +9,7 @@
 <a id="what-it-does"></a>
 <h2><img src="docs/mc/h2-what-it-does.svg" width="100%" alt="What it does"/></h2>
 
-1. Opens your device camera in the browser
-2. Detects the leaf's bounding box using OpenCV HSV segmentation
-3. Classifies the disease (or healthy) with a DenseNet121 model trained on PlantVillage
-4. Draws a color-coded **3D AR overlay** (Three.js ring + contour) anchored to the detected leaf
-5. Shows diagnosis, confidence score, and treatment recommendation in a result panel
-
-**Supports 15 disease classes across 3 plants:**
-
-| Plant | Conditions |
-|---|---|
-| Tomato | Bacterial spot, Early blight, Late blight, Leaf mold, Septoria leaf spot, Spider mites, Target spot, Yellow Leaf Curl Virus, Mosaic virus, Healthy |
-| Potato | Early blight, Late blight, Healthy |
-| Pepper bell | Bacterial spot, Healthy |
+<p align="center"><img src="docs/mc/t-01.svg" width="100%" alt="Opens your device camera in the browser Detects the leaf&#x27;s bounding box using OpenCV HSV segmentation Classifies the disease (or healthy) with a DenseNet121 model trained on PlantVillage Draws a color-coded 3D AR overlay (Three.js ring + contour) anchored to the detected leaf Shows diagnosis, confidence score, and treatment recommendation in a result panel Supports 15 disease classes across 3 plants: Plant | Conditions Tomato | Bacterial spot, Early blight, Late blight, Leaf mold, Septoria leaf spot, Spider mites, Target spot, Yellow Leaf Curl Virus, Mosaic virus, Healthy Potato | Early blight, Late blight, Healthy Pepper bell | Bacterial spot, Healthy"/></p>
 
 <a id="demo"></a>
 <h2><img src="docs/mc/h2-demo.svg" width="100%" alt="Demo"/></h2>
@@ -47,14 +35,7 @@ Frontend (port 8080)
 <a id="tech-stack"></a>
 <h2><img src="docs/mc/h2-tech-stack.svg" width="100%" alt="Tech Stack"/></h2>
 
-| Layer | Technology |
-|---|---|
-| Disease model | TensorFlow / Keras, DenseNet121 |
-| Leaf detection | OpenCV HSV segmentation |
-| Backend | Python 3.12, Flask, Flask-CORS |
-| Frontend | Vanilla JS ES modules |
-| 3D AR overlay | Three.js (orthographic, screen-space) |
-| Dataset | PlantVillage (via Kaggle) |
+<p align="center"><img src="docs/mc/t-02.svg" width="100%" alt="Layer | Technology Disease model | TensorFlow / Keras, DenseNet121 Leaf detection | OpenCV HSV segmentation Backend | Python 3.12, Flask, Flask-CORS Frontend | Vanilla JS ES modules 3D AR overlay | Three.js (orthographic, screen-space) Dataset | PlantVillage (via Kaggle)"/></p>
 
 <a id="quick-start"></a>
 <h2><img src="docs/mc/h2-quick-start.svg" width="100%" alt="Quick Start"/></h2>
@@ -62,9 +43,7 @@ Frontend (port 8080)
 <a id="prerequisites"></a>
 <h3><img src="docs/mc/h3-prerequisites.svg" width="100%" alt="Prerequisites"/></h3>
 
-- Python 3.12
-- Node.js (for `npm install`)
-- A browser with camera access (Chrome/Firefox recommended)
+<p align="center"><img src="docs/mc/t-03.svg" width="100%" alt="Python 3.12 Node.js (for npm install) A browser with camera access (Chrome/Firefox recommended)"/></p>
 
 <a id="1-clone"></a>
 <h3><img src="docs/mc/h3-1-clone.svg" width="100%" alt="1. Clone"/></h3>
@@ -100,14 +79,14 @@ cd ..
 ./start.sh
 ```
 
-Then open: **http://127.0.0.1:8080/public/index.html**
+<p align="center"><img src="docs/mc/t-04.svg" width="100%" alt="Then open: http://127.0.0.1:8080/public/index.html"/></p>
 
 ```bash
 # Stop everything
 ./kill.sh
 ```
 
-**Windows:**
+<p align="center"><img src="docs/mc/t-05.svg" width="100%" alt="Windows:"/></p>
 
 ```bat
 start.bat
@@ -130,14 +109,15 @@ python3 -m http.server 8080 --bind 127.0.0.1
 <a id="dataset"></a>
 <h2><img src="docs/mc/h2-dataset.svg" width="100%" alt="Dataset"/></h2>
 
-The model is trained on the **PlantVillage** dataset.  
-Download from [Kaggle](https://www.kaggle.com/datasets/abdallahalidev/plantvillage-dataset) and place it at:
+<p align="center"><img src="docs/mc/t-06.svg" width="100%" alt="The model is trained on the PlantVillage dataset.Download from Kaggle and place it at:"/></p>
+
+<p align="center"><a href="https://www.kaggle.com/datasets/abdallahalidev/plantvillage-dataset"><img src="docs/mc/link-01.svg" height="34" alt="Kaggle"/></a></p>
 
 ```
 backend/dataset/PlantVillage/
 ```
 
-Run training:
+<p align="center"><img src="docs/mc/t-07.svg" width="100%" alt="Run training:"/></p>
 
 ```bash
 cd backend/training
@@ -146,7 +126,7 @@ cd backend/training
 ../../venv/bin/python evaluate_model.py
 ```
 
-The trained model (`backend/models/plant_disease_model.keras`) is **included** in this repo (37 MB).
+<p align="center"><img src="docs/mc/t-08.svg" width="100%" alt="The trained model (backend/models/plant_disease_model.keras) is included in this repo (37 MB)."/></p>
 
 <a id="api-reference"></a>
 <h2><img src="docs/mc/h2-api-reference.svg" width="100%" alt="API Reference"/></h2>
@@ -154,9 +134,8 @@ The trained model (`backend/models/plant_disease_model.keras`) is **included** i
 <a id="post-predict"></a>
 <h3><img src="docs/mc/h3-post-predict.svg" width="100%" alt="POST /predict"/></h3>
 
-**Request:** `multipart/form-data` with field `image` (JPEG or PNG)
+<p align="center"><img src="docs/mc/t-09.svg" width="100%" alt="Request: multipart/form-data with field image (JPEG or PNG) Response:"/></p>
 
-**Response:**
 ```json
 {
   "disease": "Tomato_Early_blight",
@@ -167,7 +146,7 @@ The trained model (`backend/models/plant_disease_model.keras`) is **included** i
 }
 ```
 
-`leafBox` and `leafContour` are `null` when no leaf is detected.
+<p align="center"><img src="docs/mc/t-10.svg" width="100%" alt="leafBox and leafContour are null when no leaf is detected."/></p>
 
 <a id="get-health"></a>
 <h3><img src="docs/mc/h3-get-health.svg" width="100%" alt="GET /health"/></h3>
@@ -202,29 +181,20 @@ AR-Plant-Health-Checker/
 <a id="contributing"></a>
 <h2><img src="docs/mc/h2-contributing.svg" width="100%" alt="Contributing"/></h2>
 
-Contributions are welcome. To get started:
-
-1. Fork the repo
-2. Create a feature branch: `git checkout -b feat/my-feature`
-3. Commit with conventional commits: `git commit -m "feat: add X"`
-4. Open a Pull Request
-
-**Good first issues:**
-- Add support for more plant species / disease classes
-- Mobile PWA support
-- WebRTC-based real-time streaming instead of polling
-- Docker Compose setup
+<p align="center"><img src="docs/mc/t-11.svg" width="100%" alt="Contributions are welcome. To get started: Fork the repo Create a feature branch: git checkout -b feat/my-feature Commit with conventional commits: git commit -m &quot;feat: add X&quot; Open a Pull Request Good first issues: Add support for more plant species / disease classes Mobile PWA support WebRTC-based real-time streaming instead of polling Docker Compose setup"/></p>
 
 <a id="license"></a>
 <h2><img src="docs/mc/h2-license.svg" width="100%" alt="License"/></h2>
 
-MIT — see [LICENSE](LICENSE).
+<p align="center"><img src="docs/mc/t-12.svg" width="100%" alt="MIT - see LICENSE."/></p>
+
+<p align="center"><a href="LICENSE"><img src="docs/mc/link-02.svg" height="34" alt="LICENSE"/></a></p>
 
 <a id="acknowledgements"></a>
 <h2><img src="docs/mc/h2-acknowledgements.svg" width="100%" alt="Acknowledgements"/></h2>
 
-- [PlantVillage Dataset](https://www.kaggle.com/datasets/abdallahalidev/plantvillage-dataset) — Hughes & Salathé, 2015
-- [Three.js](https://threejs.org/) — 3D WebGL library
-- [TensorFlow / Keras](https://www.tensorflow.org/) — model training + inference
+<p align="center"><img src="docs/mc/t-13.svg" width="100%" alt="PlantVillage Dataset - Hughes &amp; Salathé, 2015 Three.js - 3D WebGL library TensorFlow / Keras - model training + inference"/></p>
+
+<p align="center"><a href="https://www.kaggle.com/datasets/abdallahalidev/plantvillage-dataset"><img src="docs/mc/link-03.svg" height="34" alt="PlantVillage Dataset"/></a> <a href="https://threejs.org/"><img src="docs/mc/link-04.svg" height="34" alt="Three.js"/></a> <a href="https://www.tensorflow.org/"><img src="docs/mc/link-05.svg" height="34" alt="TensorFlow / Keras"/></a></p>
 
 <p align="center"><a href="https://github.com/thanmaiashok"><img src="docs/mc/footer.svg" width="100%" alt="Built by Thanmai A, founder of FoxynAI"/></a></p>
