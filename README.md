@@ -1,4 +1,5 @@
 <p align="center"><img src="docs/flow.svg" alt="Animated AR Plant Health pipeline: Camera → Detect → Classify → Advise → Overlay" width="100%"/></p>
+
 <p align="center"><sub>10-second tour: Camera → Detect → Classify → Advise → Overlay</sub></p>
 
 <p align="center"><img src="docs/mc/intro.svg" width="100%" alt="Point your camera at a leaf and get an instant AI diagnosis with a live 3D AR overlay."/></p>
