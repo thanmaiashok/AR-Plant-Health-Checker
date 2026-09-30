@@ -1,19 +1,12 @@
-# 🌿 AR Plant Health Checker
-
 <p align="center"><img src="docs/flow.svg" alt="Animated AR Plant Health pipeline: Camera → Detect → Classify → Advise → Overlay" width="100%"/></p>
 <p align="center"><sub>10-second tour: Camera → Detect → Classify → Advise → Overlay</sub></p>
 
-> Point your camera at a leaf — get an instant AI diagnosis with a live 3D AR overlay.
+<p align="center"><img src="docs/mc/intro.svg" width="100%" alt="Point your camera at a leaf and get an instant AI diagnosis with a live 3D AR overlay."/></p>
 
-![Python](https://img.shields.io/badge/Python-3.12-blue?logo=python)
-![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-orange?logo=tensorflow)
-![Three.js](https://img.shields.io/badge/Three.js-r179-black?logo=three.js)
-![License](https://img.shields.io/badge/License-MIT-green)
-![Model Accuracy](https://img.shields.io/badge/Model%20Accuracy-97.3%25-brightgreen)
+<p align="center"><img src="docs/mc/features.svg" width="100%" alt="Key features"/></p>
 
----
-
-## What it does
+<a id="what-it-does"></a>
+<h2><img src="docs/mc/h2-what-it-does.svg" width="100%" alt="What it does"/></h2>
 
 1. Opens your device camera in the browser
 2. Detects the leaf's bounding box using OpenCV HSV segmentation
@@ -29,15 +22,13 @@
 | Potato | Early blight, Late blight, Healthy |
 | Pepper bell | Bacterial spot, Healthy |
 
----
-
-## Demo
+<a id="demo"></a>
+<h2><img src="docs/mc/h2-demo.svg" width="100%" alt="Demo"/></h2>
 
 ![Architecture Diagram](docs/architecture_diagram.png)
 
----
-
-## Architecture
+<a id="architecture"></a>
+<h2><img src="docs/mc/h2-architecture.svg" width="100%" alt="Architecture"/></h2>
 
 ```
 Browser Camera
@@ -52,9 +43,8 @@ Frontend (port 8080)
     └── Three.js (WebGL)   →  3D ring + contour line anchored to leaf
 ```
 
----
-
-## Tech Stack
+<a id="tech-stack"></a>
+<h2><img src="docs/mc/h2-tech-stack.svg" width="100%" alt="Tech Stack"/></h2>
 
 | Layer | Technology |
 |---|---|
@@ -65,24 +55,26 @@ Frontend (port 8080)
 | 3D AR overlay | Three.js (orthographic, screen-space) |
 | Dataset | PlantVillage (via Kaggle) |
 
----
+<a id="quick-start"></a>
+<h2><img src="docs/mc/h2-quick-start.svg" width="100%" alt="Quick Start"/></h2>
 
-## Quick Start
-
-### Prerequisites
+<a id="prerequisites"></a>
+<h3><img src="docs/mc/h3-prerequisites.svg" width="100%" alt="Prerequisites"/></h3>
 
 - Python 3.12
 - Node.js (for `npm install`)
 - A browser with camera access (Chrome/Firefox recommended)
 
-### 1. Clone
+<a id="1-clone"></a>
+<h3><img src="docs/mc/h3-1-clone.svg" width="100%" alt="1. Clone"/></h3>
 
 ```bash
 git clone https://github.com/thanmaiashok/AR-Plant-Health-Checker.git
 cd AR-Plant-Health-Checker
 ```
 
-### 2. Backend setup
+<a id="2-backend-setup"></a>
+<h3><img src="docs/mc/h3-2-backend-setup.svg" width="100%" alt="2. Backend setup"/></h3>
 
 ```bash
 cd backend
@@ -91,7 +83,8 @@ python3.12 -m venv venv
 cd ..
 ```
 
-### 3. Frontend setup
+<a id="3-frontend-setup"></a>
+<h3><img src="docs/mc/h3-3-frontend-setup.svg" width="100%" alt="3. Frontend setup"/></h3>
 
 ```bash
 cd frontend
@@ -99,7 +92,8 @@ npm install
 cd ..
 ```
 
-### 4. Run (both services in one command)
+<a id="4-run-both-services-in-one-command"></a>
+<h3><img src="docs/mc/h3-4-run-both-services-in-one-command.svg" width="100%" alt="4. Run (both services in one command)"/></h3>
 
 ```bash
 ./start.sh
@@ -119,7 +113,8 @@ start.bat
 kill.bat
 ```
 
-### Manual startup
+<a id="manual-startup"></a>
+<h3><img src="docs/mc/h3-manual-startup.svg" width="100%" alt="Manual startup"/></h3>
 
 ```bash
 # Terminal 1 — backend (port 5001)
@@ -131,9 +126,8 @@ cd frontend
 python3 -m http.server 8080 --bind 127.0.0.1
 ```
 
----
-
-## Dataset
+<a id="dataset"></a>
+<h2><img src="docs/mc/h2-dataset.svg" width="100%" alt="Dataset"/></h2>
 
 The model is trained on the **PlantVillage** dataset.  
 Download from [Kaggle](https://www.kaggle.com/datasets/abdallahalidev/plantvillage-dataset) and place it at:
@@ -153,11 +147,11 @@ cd backend/training
 
 The trained model (`backend/models/plant_disease_model.keras`) is **included** in this repo (37 MB).
 
----
+<a id="api-reference"></a>
+<h2><img src="docs/mc/h2-api-reference.svg" width="100%" alt="API Reference"/></h2>
 
-## API Reference
-
-### `POST /predict`
+<a id="post-predict"></a>
+<h3><img src="docs/mc/h3-post-predict.svg" width="100%" alt="POST /predict"/></h3>
 
 **Request:** `multipart/form-data` with field `image` (JPEG or PNG)
 
@@ -174,15 +168,15 @@ The trained model (`backend/models/plant_disease_model.keras`) is **included** i
 
 `leafBox` and `leafContour` are `null` when no leaf is detected.
 
-### `GET /health`
+<a id="get-health"></a>
+<h3><img src="docs/mc/h3-get-health.svg" width="100%" alt="GET /health"/></h3>
 
 ```json
 { "status": "ok" }
 ```
 
----
-
-## Project Structure
+<a id="project-structure"></a>
+<h2><img src="docs/mc/h2-project-structure.svg" width="100%" alt="Project Structure"/></h2>
 
 ```
 AR-Plant-Health-Checker/
@@ -204,9 +198,8 @@ AR-Plant-Health-Checker/
 └── kill.sh  / kill.bat
 ```
 
----
-
-## Contributing
+<a id="contributing"></a>
+<h2><img src="docs/mc/h2-contributing.svg" width="100%" alt="Contributing"/></h2>
 
 Contributions are welcome. To get started:
 
@@ -221,16 +214,16 @@ Contributions are welcome. To get started:
 - WebRTC-based real-time streaming instead of polling
 - Docker Compose setup
 
----
-
-## License
+<a id="license"></a>
+<h2><img src="docs/mc/h2-license.svg" width="100%" alt="License"/></h2>
 
 MIT — see [LICENSE](LICENSE).
 
----
-
-## Acknowledgements
+<a id="acknowledgements"></a>
+<h2><img src="docs/mc/h2-acknowledgements.svg" width="100%" alt="Acknowledgements"/></h2>
 
 - [PlantVillage Dataset](https://www.kaggle.com/datasets/abdallahalidev/plantvillage-dataset) — Hughes & Salathé, 2015
 - [Three.js](https://threejs.org/) — 3D WebGL library
 - [TensorFlow / Keras](https://www.tensorflow.org/) — model training + inference
+
+<p align="center"><a href="https://github.com/thanmaiashok"><img src="docs/mc/footer.svg" width="100%" alt="Built by Thanmai A, founder of FoxynAI"/></a></p>
